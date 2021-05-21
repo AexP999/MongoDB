@@ -1,0 +1,12 @@
+
+use('Les1');
+db.getCollection('students').find({})
+
+db.getCollection('students'). aggregate ([
+  {$match: {
+      _id: 0,
+      avg_score:{$avg:'$avgScore'}
+      }
+  }
+])
+  
